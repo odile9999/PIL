@@ -1,0 +1,15 @@
+script PILAB_WITH_IONS_REFILL
+   wait until scriptTrigger0
+   generate GuidesOn
+   repeat NUMBER_OF_REFILLS
+      wait FROM_LAST_REPEAT
+      generate FilterOffGuidesOn
+      wait FILTER_TAU
+      wait until scriptTrigger0
+      wait TRAPPING_DELAY
+      generate FilterOffGuidesOnTrapStart
+      wait TRAPPING_DURATION
+      generate FilterOffGuidesOnTrapStop
+      wait FILTER_TAU
+      generate FilterOnGuidesOn
+   end repeat
